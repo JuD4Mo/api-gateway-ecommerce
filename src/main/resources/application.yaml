@@ -1,13 +1,5 @@
 spring:
   application:
     name: api-gateway
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    fetch-registry: true #Le permite al gateway saber la lista de servicios
-    register-with-eureka: true #Estamos indicando que somos api-gateway y eureka lista el servicio
-
-server:
-  port: 9000
+  config:
+    import: "optional:configserver:http://localhost:8888"
